@@ -1,10 +1,26 @@
-const http = new XMLHttpRequest();
+const listaClientes = () => {
+  return fetch('http://localhost:3000/profile')
+    .then((res => res.json()))
+}
 
-console.log('Twawarw')
-http.open('GET', 'http://localhost:3000/profile');
+const cadastraCliente = (nome, email) => {
+  return fetch('http://localhost:3000/profile', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        nome,
+        email,
+      })
+    })
+    .then((res) => res.body);
+}
 
-http.send();
+// cadastraCliente('Luiz223423', 'email2234');
 
-http.onload = () => {
-    console.log(http.response);
+
+export const clienteService = {
+  listaClientes,
+  cadastraCliente,
 };

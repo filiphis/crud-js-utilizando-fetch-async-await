@@ -4,6 +4,36 @@
       "nome": "felipe",
       "email": "felipe@alura.com",
       "id": 1
+    },
+    {
+      "nome": "Luiz",
+      "email": "Luiz@alura.com",
+      "id": 2
+    },
+    {
+      "nome": "Luiz",
+      "email": "l.filiphis@hotmail.com",
+      "id": 3
+    },
+    {
+      "nome": "Luiz",
+      "email": "l.filiphis@hotmail.com",
+      "id": 4
+    },
+    {
+      "nome": "Teste",
+      "email": "luiz.fsilveira@totvs.com.br",
+      "id": 5
+    },
+    {
+      "nome": "Luiz Silveira",
+      "email": "luiz.fsilveira@totvs.com.br",
+      "id": 6
+    },
+    {
+      "nome": "Gustavo",
+      "email": "gustavo@email.com",
+      "id": 7
     }
   ]
 }

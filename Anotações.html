@@ -1,0 +1,77 @@
+<!-- 
+CRUD FetchAPI 
+Create
+Read
+Update
+Delete
+
+DICAS:
+    - Criar um diretorio service onde ficarão os arquivos que realizam serviços referente a conxões com API's
+
+.
+ -->
+
+<!-- Síncrono :: 
+  Código síncrono é aquele que ocorre em sequência, uma instrução após a outra. É necessario que uma instrução seja concluida para que a outra inicie.
+-->
+
+<!-- Assíncrono :: 
+  Códigos Asíncronos são executados em pararelo e o mais rapido possivel, um código não trava outro para ser executado, a não ser que isso seja solicitado.
+-->
+
+<!-- Promise ::  
+  Promise  é um objeto usado para processamento assíncrono, representa um valor que pode estar disponível agora, no futuro ou nunca.
+
+  Um Promise está em um destes estados: 
+    - pending (pendente): Estado inicial, que não foi realizada nem rejeitada.
+    - fulfilled (realizada): sucesso na operação.
+    - rejected (rejeitado):  falha na operação.
+  
+  Uma promessa pendente pode se tornar realizada com um valor ou rejeitada por um motivo , com um erro. 
+
+  Quando um desses estados ocorre, o método then do Promise é chamado, e ele chama o método de tratamento associado ao estado (rejected ou resolved).
+-->
+
+<!-- Fech :: 
+  É uma função que foi criada com a junção de Promise + XmlHttpRequest para facilitar o consumo de Api's no Front-end 
+-->
+
+<!--     -->
+
+<script>
+  // Alguns parametros da função Fetch
+
+  // Para fazer um GET podemos utiliza-la passamento somente o caminho do end-point
+  const teste = () => fetch('Api-Url');
+
+  // Segue exemplo caso necessite de parametros adicionais
+  // Exemplo para editar dados
+  const teste2 = () => {
+    fetch('Api-Url', {
+      // Qual metodo HTTP será utilizado na requisição ( DELETE, GET, POST, ou PUT, )
+      method: 'POST',
+      // headers: Configurações necessarios no cabeçalho da requisição
+      // Neste caso estamos informando que o conteudo é do tipo json
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      // body: informa quais os dados que serão enviado no corpo da requisição
+      // JSON.stringify(dados) : Transforma o json em string para envia-lo pelo corpo
+      body: JSON.stringify({
+        dados
+      })
+    })
+  }
+
+  // Exemplo para deletar dados
+  // Sempre passar um ID, pois se não, TODOS os clientes serão deletados
+  const teste2 = (idDoElementoParaDeletar) => {
+    fetch(`Api-Url/${idDoElementoParaDeletar}`, {
+      method: 'DELETE',
+    })
+  }
+
+  // Busca por parametros na url ( QueryString )
+  const pegaURL = new URL(window.location)
+  const id = pegaURL.searchParams.get('id')
+</script>
